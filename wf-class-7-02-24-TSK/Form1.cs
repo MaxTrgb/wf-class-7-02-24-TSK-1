@@ -35,5 +35,42 @@ namespace wf_class_7_02_24_TSK
         {
 
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select an item to delete");
+                return;
+            }
+            ListViewItem item = listView1.SelectedItems[0];
+            listView1.Items.Remove(item);
+        }
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void changePriorityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void changeColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select an item to change color");
+                return;
+            }
+            ListViewItem item = listView1.SelectedItems[0];
+
+            ColorDialog colorDialog = new ColorDialog();
+
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                item.BackColor = colorDialog.Color;
+            }
+        }
     }
 }

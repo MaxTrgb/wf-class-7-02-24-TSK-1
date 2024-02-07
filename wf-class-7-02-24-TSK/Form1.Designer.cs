@@ -39,6 +39,11 @@
             textBox2 = new TextBox();
             label1 = new Label();
             label2 = new Label();
+            menuStrip1 = new MenuStrip();
+            menuToolStripMenuItem = new ToolStripMenuItem();
+            deleteToolStripMenuItem = new ToolStripMenuItem();
+            changeColorToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // listView1
@@ -47,7 +52,7 @@
             listView1.FullRowSelect = true;
             listView1.GridLines = true;
             listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2, listViewItem3 });
-            listView1.Location = new Point(236, 12);
+            listView1.Location = new Point(233, 27);
             listView1.Name = "listView1";
             listView1.Size = new Size(445, 337);
             listView1.Sorting = SortOrder.Ascending;
@@ -107,6 +112,36 @@
             label2.TabIndex = 5;
             label2.Text = "Task:";
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.TabIndex = 6;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { deleteToolStripMenuItem, changeColorToolStripMenuItem });
+            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            menuToolStripMenuItem.Size = new Size(50, 20);
+            menuToolStripMenuItem.Text = "Menu";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            deleteToolStripMenuItem.Size = new Size(180, 22);
+            deleteToolStripMenuItem.Text = "Delete task";
+            deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
+            // 
+            // changeColorToolStripMenuItem
+            // 
+            changeColorToolStripMenuItem.Name = "changeColorToolStripMenuItem";
+            changeColorToolStripMenuItem.Size = new Size(180, 22);
+            changeColorToolStripMenuItem.Text = "Change color";
+            changeColorToolStripMenuItem.Click += changeColorToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -118,8 +153,12 @@
             Controls.Add(textBox1);
             Controls.Add(button1);
             Controls.Add(listView1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -134,5 +173,9 @@
         private TextBox textBox2;
         private Label label1;
         private Label label2;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem menuToolStripMenuItem;
+        private ToolStripMenuItem deleteToolStripMenuItem;
+        private ToolStripMenuItem changeColorToolStripMenuItem;
     }
 }
